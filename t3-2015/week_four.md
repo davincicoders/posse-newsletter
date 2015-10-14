@@ -30,7 +30,7 @@ Yourself) principle, in which you strive to not repeat functional code within a 
 concept of recursion by calling a method from within itself. We were also shown how arrays work and how they can be used.
 
 Friday was more of a creative day. In order to get a better grasp of classes and methods we programmed a card game in 
-Ruby as a class exercise. By popular demand, we decided on Gold Fish. It was a great way to learn classes and methods 
+Ruby as a class exercise. By popular demand, we decided on Go Fish. It was a great way to learn classes and methods 
 and a great way to see how Object Oriented Programming works. Everything we’ve been doing so far has been a stepping-stone 
 to get us to where we are and visualizing the program as a card game was awesome. We are flying through the class and have 
 been immersed in code!
@@ -50,4 +50,5 @@ Sincerely,
 
 von Neumann posse, t3-2015
 
-( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°
+Lucas, David, Serg, Reza, and Jonathan
+( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°)ʖ ͡°
