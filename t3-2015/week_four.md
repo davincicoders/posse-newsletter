@@ -11,7 +11,7 @@ another way that Da Vinci Coders helps students prepare for the workplace.
   We've continued our transition from focusing on the software tools that professional coders use every day to focusing 
 on the nuts and bolts of the Ruby programming language.  On Monday, we covered methods and flow control.  Methods are 
 the ‘verbs’ of the programming world.  They allow programmers to capture frequently used procedures and add new 
-functionality to their software objects. Flow control, to guide the execution of our programs.
+functionality to their software objects. Flow control involves the use of conditionals to guide the execution of our programs.
 
    We were introduced to flow control by an exploration of branching, loops, and Boolean expressions.  Branching allows 
 our code to make decisions by using if statements and else statements.  Loops are used to execute a single method 
@@ -50,5 +50,5 @@ Sincerely,
 
 von Neumann posse, t3-2015
 
-Lucas, David, Serg, Reza, and Jonathan
+Lucas Henderson, David Jarrett, Sergey Skumatov, Reza Mamdani, and Jonathan Speek
 ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°)ʖ ͡°
