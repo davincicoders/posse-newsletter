@@ -25,27 +25,50 @@ http://www.davinciinstitute.com/colorado-events/#!event/2016/1/19/learn-ios-mobi
 
 > * Danny - Shoutout to Tim for being a TDD master.  Thanks for your help!
 
+> * Riley - Shout out to Andrew Lampert for sharing his time answering my questions about his experience in programming.
 
+> * Tim - Shout out to Andy for helping me with questions about Active Record.
 
 
 
 
 ### Week 8 - In Review
 
-Welcome to Week 8 in Review or: Scaffolding Appreciation Week Part Deux.  
+This week, we spent a lot of time in class creating a rails app called DaVinci Shopping Cart. It was a great exercise in incorporating a lot of the techniques we’ve learned so far, as well as an introduction to new tools such as scaffolding. Our goal was to create an app that could create a list of products that were for sale and enable a user to add desired products to a shopping cart. One of the first things we did was generate a rails scaffold for products. Scaffolding is an extremely useful Rails tool that quickly generates all of the necessary files for a given model. In our shopping cart, we wanted to create a product model with four attributes: name, description, image, and price. Rails scaffolding will automatically generate and modify the model, views, controller, and tests for our Product so it saves HOURS of work and enables you to start working on other functionalities in your app.
 
-This week we contemplated the subtle distinctions between behavior driven development (BDD) and test driven development (TDD). BDD is an extension of the ideas behind test driven development, yet is designed to implement tests that can be read more naturally and is helpful for designing the software in collaboration with others in addition to making sure that it works. Test driven development is more for the benefit of developers and BDD is more for the benefit of users. So in other words, there isn’t a hard and fast rule to determine which is which but Jason insists there is a difference, and I trust him. 
+```
+rails generate scaffold Product name:string description:string image_url:string price:decimal
+```
 
-When writing tests for BDD and TDD the general idea is the same, and that is ‘red, green, refactor’.  This concept is to write a failing test (red), write the code to make it pass (green), and then refactor either the code or the test, rinse and repeat.  With BDD we are testing the behaviors that we want to be present in our website, such as being able to push a button that takes you to the homepage.  The red, green, refactor steps would have us write a behavioral test stating we need to button that takes us to the homepage.  Our test would fail (red) so we would then write the code make this pass (green).  We would then adjust our code or our test to make sure everything else within our app works with our changes (refactor).  Rinse and repeat.
+As we continued to add features (carts, line items) to our DaVinci Shopping Cart, we learned about the subtle distinctions between Behavior (BDD) and Test Driven Development (TDD). BDD is an extension of TDD, but aims to implement tests that can be read more naturally. It also focuses more on a user’s experience of an app, rather than the actual result of code. This is helpful for collaborating with others and also reduces the amount of effort required to write good tests. 
 
-On Wednesday our warm up exercise involved forking a rails repo that Jason gave us and then modifying the app to pass the specs that were included in it. This ended up taking longer than we expected because we tended to over complicate our objective as is often the case when we are overwhelmed with multicolor strobes of unit tests. At this point in the course we are just immersing and re-immersing ourselves in this framework and until the pieces come together and we memorize more shortcuts in RubyMine. I’ve found it is a good newbie rails practice to write tests twice and scaffold once. But does it really matter if you can just run rollback the migration you just raked? I don’t know. What I do know is this :
+Consider the following test, written with the `capybara` gem, which allows a user to sign into their profile page:
+```
+feature ‘Signing in’ do
+  scenario ‘allows a user to sign in to profile page’ do
+    visit ‘/home’
 
-“I’m a factory girl in an automatically generated world. Helping make good tests pass, I must refactor this class.”
+    click_button ‘Sign In’
 
-We were introduced to tests that filled in form fields with fake content and were shown how to make that content be randomly generated with FactoryGirl. 
+    fill_in ‘Email’, with: ‘person@company.com’
+    fill_in ‘Password’, with: ‘secret123’
+
+    expect(page).to have_content(‘Sign in successful.’)
+  end
+end
+```
+
+The syntax is so simple that you can focus on building your app instead of wasting time writing complex tests. While the distinction between BDD and TDD is subtle, it helps to think of them as answer two different questions: ‘How would I use this?’ and ‘How does this work?’ When writing tests for BDD and TDD, the general workflow is the same: ‘red, green, refactor’.  The general idea is to write a failing test (red), write the code to make it pass (green), (refactor) either the code or the test, and repeat.
+
+While building the DaVinci Shoping Cart, we also learned about a couple of new gems that are extremely useful in developing Rails apps: 
+
+> * [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails) and [faker](https://github.com/stympy/faker). These two gems can be used in tandem to generate fake data that is useful in testing your app. More importantly, being able to see how your website operates with fake data allows you to pinpoint bugs in your code and other issues that might detract from a user’s experience.
+
+To help us get more comfortable with Rails, Jason gave us a challenging warmup exercise on Wednesday. We had to fork a repository for a rails app that was broken and the challenge was to fix the code to pass tests that Jason had already written. This ended up taking longer than we expected because of our unfamiliarity in reading test errors and fixing the ‘right’ problem. However, the nice thing about TDD and BDD is that we can focus on one error at a time until we make the right changes to pass our tests. At this point in the course, we are just immersing ourselves with practicing with the Rails framework until all of the pieces come together.
 
 Sincerely,
 
 Boole posse, t3-2015
 
 Tim Park,  Danny Debevec,  Sue Uyetake,  Matt Michnal,  Riley Jones  
+
