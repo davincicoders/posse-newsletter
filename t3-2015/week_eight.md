@@ -60,7 +60,7 @@ end
 
 The syntax is so simple that you can focus on building your app instead of wasting time writing complex tests. While the distinction between BDD and TDD is subtle, it helps to think of them as answer two different questions: ‘How would I use this?’ and ‘How does this work?’ When writing tests for BDD and TDD, the general workflow is the same: ‘red, green, refactor’.  The general idea is to write a failing test (red), write the code to make it pass (green), (refactor) either the code or the test, and repeat.
 
-While building the DaVinci Shoping Cart, we also learned about a couple of new gems that are extremely useful in developing Rails apps: 
+While building the DaVinci Shopping Cart, we also learned about a couple of new gems that are extremely useful in developing Rails apps: 
 
 > * [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails) and [faker](https://github.com/stympy/faker). These two gems can be used in tandem to generate fake data that is useful in testing your app. More importantly, being able to see how your website operates with fake data allows you to pinpoint bugs in your code and other issues that might detract from a user’s experience.
 
